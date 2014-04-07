@@ -1,6 +1,17 @@
+require 'spec_helper'
+require 'inactive_support/numeric'
+
 describe Numeric do
 
   describe "#precision" do
+
+    it 'behaves exactly like Float#round when invoked with no arguments', :brute do
+      1_000_000.times do
+        n = rand(1.0..100.0)
+        puts n if n.precision != n.round
+        n.precision.should eq n.round
+      end
+    end
 
     it 'behaves exactly like Float#round when invoked with no arguments' do
       1_000.times do
