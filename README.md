@@ -1,6 +1,6 @@
 # InactiveSupport
 
-TODO: Write a gem description
+A collection of utilities for ruby projects. 
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Soon
 
 ## Contributing
 
