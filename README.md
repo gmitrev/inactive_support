@@ -18,7 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-Soon
+Object#identity
+returns self
+    
+    [1,2,3,3,4,5,5].group_by(&:identity)
+    # => [[1], [2], [3,3], [4], [5,5]]
 
 ## Contributing
 
