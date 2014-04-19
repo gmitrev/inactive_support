@@ -24,6 +24,12 @@ returns self
     [1,2,3,3,4,5,5].group_by(&:identity)
     # => [[1], [2], [3,3], [4], [5,5]]
 
+Hash#delete_blank
+Deletes all key/value pairs where the value is an empty string/array/hash or nil.
+
+    { name: nil, age: 19, address: "" }.delete_blank
+    # => { age: 19 }
+    
 ## Contributing
 
 1. Fork it
