@@ -30,6 +30,12 @@ Deletes all key/value pairs where the value is an empty string/array/hash or nil
     { name: nil, age: 19, address: "" }.delete_blank
     # => { age: 19 }
     
+Enumerable#consecutive_by
+groups objects by an attribute that is consecutive
+
+    [1,2,3,5,6,8,9].consecutive_by(&:identity)
+    # => [[1,2,3],[5,6],[8,9]]
+    
 ## Contributing
 
 1. Fork it
