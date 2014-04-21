@@ -36,6 +36,11 @@ groups objects by an attribute that is consecutive
     [1,2,3,5,6,8,9].consecutive_by(&:identity)
     # => [[1,2,3],[5,6],[8,9]]
     
+Object#try
+send a message to the receiver and if it doesn't respond to the message, return nil
+
+    "".try(:some_method)
+    # => nil
 ## Contributing
 
 1. Fork it
