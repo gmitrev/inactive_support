@@ -34,7 +34,7 @@ send a message to the receiver and if it doesn't respond to the message, return 
 #### #ctry
 chained try, for methods with no arguments
 
-    "Somestring".try(:mb_chars, :downcase, :some_method)
+    "Somestring".ctry(:mb_chars, :downcase, :some_method)
     # => nil
     
 ### Hash
