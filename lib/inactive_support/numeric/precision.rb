@@ -1,20 +1,20 @@
+# A more precise rounding. ~4 times slower than simple round
+#
+#     3.904605.round(2)
+#     # => 3.9
+#     3.904605.precision(2)
+#     # => 3.91
+#
+#     37.9945.round(2)
+#     # => 37.99
+#     37.9945.precision(2)
+#     # => 38.0
 class Numeric
-  # A more precise rounding. ~4 times slower than simple round
-  #
-  #     3.904605.round(2)
-  #     # => 3.9
-  #     3.904605.precision(2) 
-  #     # => 3.91
-  #
-  #     37.9945.round(2)    
-  #     # => 37.99                        
-  #     37.9945.precision(2)
-  #     # => 38.0                         
   def precision(precision = 0)
-    power = 10 ** precision
+    power = 10**precision
 
     if precision == 0
-      self.round
+      round
     else
       powered = self * power
 

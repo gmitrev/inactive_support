@@ -3,7 +3,7 @@ class Object
   #
   # ==== Examples
   #
-  #   [1,2,3,5,7].consecutive_by(:identity) 
+  #   [1,2,3,5,7].consecutive_by(&:identity)
   #   => [[1, 2, 3], [5], [7]]
   def identity
     if block_given?
@@ -13,5 +13,3 @@ class Object
     end
   end
 end
-
-

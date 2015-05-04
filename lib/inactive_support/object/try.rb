@@ -1,5 +1,4 @@
 class Object
-
   # Credit goes to the active_support contributors
   # https://github.com/rails/rails/blob/master/activesupport/lib/active_support/core_ext/object/try.rb
   #
@@ -14,25 +13,23 @@ class Object
     end
   end
 
-
   # Chained try allows writing
   #
   #    str.ctry(:mb_chars, :downcase, :dasherize)
   #
   # instead of
-  # 
+  #
   #    str.try(:mb_chars).try(:downcase).try(:dasherize)
   #
-  # Only works for methods that don't take arguments.
+  # Only works for methods that don't take any arguments.
   def ctry(*args)
     first, *rest = args
     if rest.any?
-      self.try(first).ctry(*rest)
+      try(first).ctry(*rest)
     else
-      self.try(first)
+      try(first)
     end
   end
-
 end
 
 class NilClass
@@ -43,5 +40,4 @@ class NilClass
   def ctry(*args)
     nil
   end
-
 end
