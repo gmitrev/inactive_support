@@ -1,6 +1,6 @@
 # InactiveSupport
 
-A collection of utilities for ruby projects. 
+A collection of utilities for ruby projects.
 
 ## Installation
 
@@ -21,22 +21,22 @@ Or install it yourself as:
 ### Object
 #### #identity
 returns self
-    
+
     [1,2,3,3,4,5,5].group_by(&:identity)
     # => [[1], [2], [3,3], [4], [5,5]]
-    
+
 #### #try
 send a message to the receiver and if it doesn't respond to the message, return nil
 
     "".try(:some_method)
     # => nil
-    
+
 #### #ctry
 chained try, for methods with no arguments
 
     "Somestring".ctry(:mb_chars, :downcase, :some_method)
     # => nil
-    
+
 ### Hash
 #### #delete_blank
 Deletes all key/value pairs where the value is an empty string/array/hash or nil.
@@ -50,7 +50,7 @@ groups objects by an attribute that is consecutive
 
     [1,2,3,5,6,8,9].consecutive_by(&:identity)
     # => [[1,2,3],[5,6],[8,9]]
-    
+
 
 ## Contributing
 
