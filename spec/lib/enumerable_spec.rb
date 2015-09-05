@@ -12,19 +12,20 @@ describe Enumerable do
     it 'partitions lists by consecutive attribute' do
       simple_people = [mitko, goshko, krasi, dedo]
 
-      simple_people.consecutive_by(&:age).should eq [[mitko, goshko], [krasi], [dedo]]
+      expect(simple_people.consecutive_by(&:age)).to eq [[mitko, goshko], [krasi], [dedo]]
+      expect(simple_people.consecutive_by(&:age)).to eq [[mitko, goshko], [krasi], [dedo]]
     end
 
     it 'sorts by the given method before partitioning' do
       simple_people = [goshko, krasi, dedo, mitko]
 
-      simple_people.consecutive_by(&:age).should eq [[mitko, goshko], [krasi], [dedo]]
+      expect(simple_people.consecutive_by(&:age)).to eq [[mitko, goshko], [krasi], [dedo]]
     end
 
     it 'works on bare arrays' do
       ary = [1, 2, 3, 5, 7, 8, 11, 12]
 
-      ary.consecutive_by(&:identity).should eq [[1, 2, 3], [5], [7, 8], [11, 12]]
+      expect(ary.consecutive_by(&:identity)).to eq [[1, 2, 3], [5], [7, 8], [11, 12]]
     end
 
     describe 'with letters somewhere in the number' do
@@ -60,16 +61,16 @@ describe Enumerable do
       consecutive_people = [mitko, goshko]
       non_consecutive_people = [mitko, goshko, krasi]
 
-      consecutive_people.consecutive?(&:age).should be_true
+      expect(consecutive_people.consecutive?(&:age)).to be true
 
-      non_consecutive_people.consecutive?(&:age).should be_false
+      expect(non_consecutive_people.consecutive?(&:age)).to be false
     end
 
     it 'uses identity on the objects if no key is given' do
-      [1, 2, 3, 4].consecutive?.should be_true
-      [1, 2, 3, 5].consecutive?.should be_false
-      [2, 1, 3, 5].consecutive?.should be_false
-      [].consecutive?.should be_false
+      expect([1, 2, 3, 4].consecutive?).to be true
+      expect([1, 2, 3, 5].consecutive?).to be false
+      expect([2, 1, 3, 4].consecutive?).to be false
+      expect([].consecutive?).to be false
     end
 
   end

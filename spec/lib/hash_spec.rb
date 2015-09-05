@@ -15,7 +15,7 @@ describe Hash do
         id: 1
       }
 
-      initial.delete_blank.should eq expected
+      expect(initial.delete_blank).to eq expected
     end
 
     it 'deletes empty strings' do
@@ -28,7 +28,7 @@ describe Hash do
         id: 1
       }
 
-      initial.delete_blank.should eq expected
+      expect(initial.delete_blank).to eq expected
     end
 
     it 'preserves false values' do
@@ -42,7 +42,7 @@ describe Hash do
         name: false
       }
 
-      initial.delete_blank.should eq expected
+      expect(initial.delete_blank).to eq expected
     end
 
     it 'deletes empty arrays' do
@@ -55,7 +55,7 @@ describe Hash do
         id: 1
       }
 
-      initial.delete_blank.should eq expected
+      expect(initial.delete_blank).to eq expected
 
     end
     it 'deletes empty hashes' do
@@ -68,7 +68,7 @@ describe Hash do
         id: 1
       }
 
-      initial.delete_blank.should eq expected
+      expect(initial.delete_blank).to eq expected
 
     end
 
@@ -92,7 +92,7 @@ describe Hash do
         }
       }
 
-      initial.deep_delete_blank.should eq expected
+      expect(initial.deep_delete_blank).to eq expected
     end
 
     it 'deletes empty strings' do
@@ -111,7 +111,7 @@ describe Hash do
         }
       }
 
-      initial.deep_delete_blank.should eq expected
+      expect(initial.deep_delete_blank).to eq expected
     end
 
     it 'preserves false values' do
@@ -131,7 +131,7 @@ describe Hash do
         }
       }
 
-      initial.deep_delete_blank.should eq expected
+      expect(initial.deep_delete_blank).to eq expected
     end
 
     it 'deletes empty arrays' do
@@ -150,7 +150,7 @@ describe Hash do
         }
       }
 
-      initial.deep_delete_blank.should eq expected
+      expect(initial.deep_delete_blank).to eq expected
 
     end
     it 'deletes empty hashes' do
@@ -169,7 +169,7 @@ describe Hash do
         }
       }
 
-      initial.deep_delete_blank.should eq expected
+      expect(initial.deep_delete_blank).to eq expected
     end
 
   end

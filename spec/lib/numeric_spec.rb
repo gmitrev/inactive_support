@@ -9,7 +9,7 @@ describe Numeric do
       1_000_000.times do
         n = rand(1.0..100.0)
         puts n if n.precision != n.round
-        n.precision.should eq n.round
+        expect(n.precision).to eq n.round
       end
     end
 
@@ -17,30 +17,30 @@ describe Numeric do
       1_000.times do
         n = rand(1.0..100.0)
         puts n if n.precision != n.round
-        n.precision.should eq n.round
+        expect(n.precision).to eq n.round
       end
     end
 
     describe "reality checks" do
-      
+
       it "case#1" do
-        3.904605.precision(0).should eq 4
-        3.904605.precision(1).should eq 3.9
-        3.904605.precision(2).should eq 3.91
-        3.904605.precision(3).should eq 3.905
-        3.904605.precision(4).should eq 3.9046
+        expect(3.904605.precision(0)).to eq 4
+        expect(3.904605.precision(1)).to eq 3.9
+        expect(3.904605.precision(2)).to eq 3.91
+        expect(3.904605.precision(3)).to eq 3.905
+        expect(3.904605.precision(4)).to eq 3.9046
       end
 
       it "case#2" do
-        37.9945.precision(0).should eq 38
-        37.9945.precision(1).should eq 38
-        37.9945.precision(2).should eq 38
+        expect(37.9945.precision(0)).to eq 38
+        expect(37.9945.precision(1)).to eq 38
+        expect(37.9945.precision(2)).to eq 38
       end
 
       it "case#3" do
-        37.9944.precision(0).should eq 38
-        37.9944.precision(1).should eq 38
-        37.9944.precision(2).should eq 37.99
+        expect(37.9944.precision(0)).to eq 38
+        expect(37.9944.precision(1)).to eq 38
+        expect(37.9944.precision(2)).to eq 37.99
       end
 
     end
