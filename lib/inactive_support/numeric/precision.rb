@@ -1,3 +1,4 @@
+# encoding: utf-8
 # A more precise rounding. ~4 times slower than simple round
 #
 #     3.904605.round(2)

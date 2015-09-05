@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Hash
   # Deletes all key/value pairs where the value is empty string/array/hash or nil.
   def delete_blank

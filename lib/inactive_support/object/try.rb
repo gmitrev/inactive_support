@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Object
   # Credit goes to the active_support contributors
   # https://github.com/rails/rails/blob/master/activesupport/lib/active_support/core_ext/object/try.rb
@@ -33,11 +34,11 @@ class Object
 end
 
 class NilClass
-  def try(*args)
+  def try(*_args)
     nil
   end
 
-  def ctry(*args)
+  def ctry(*_args)
     nil
   end
 end

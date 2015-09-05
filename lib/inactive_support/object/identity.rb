@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Object
   # Returns self. If given a block, it works a lot like Object#tap
   #

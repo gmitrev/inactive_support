@@ -1,9 +1,10 @@
+# encoding: utf-8
 require 'spec_helper'
 require 'inactive_support/hash/delete_blank'
 
 describe Hash do
 
-  describe "#delete_blank" do
+  describe '#delete_blank' do
 
     it 'deletes nils' do
       initial = {
@@ -21,7 +22,7 @@ describe Hash do
     it 'deletes empty strings' do
       initial = {
         id: 1,
-        name: ""
+        name: ''
       }
 
       expected = {
@@ -74,21 +75,21 @@ describe Hash do
 
   end
 
-  describe "#deep_delete_blank" do
+  describe '#deep_delete_blank' do
 
     it 'deletes nils' do
       initial = {
         id: 1,
         name: {
           first: nil,
-          middle: "Peter"
+          middle: 'Peter'
         }
       }
 
       expected = {
         id: 1,
         name: {
-          middle: "Peter"
+          middle: 'Peter'
         }
       }
 
@@ -99,15 +100,15 @@ describe Hash do
       initial = {
         id: 1,
         name: {
-          first: "",
-          middle: "Peter"
+          first: '',
+          middle: 'Peter'
         }
       }
 
       expected = {
         id: 1,
         name: {
-          middle: "Peter"
+          middle: 'Peter'
         }
       }
 
@@ -119,7 +120,7 @@ describe Hash do
         id: 1,
         name: {
           first: false,
-          middle: "Peter"
+          middle: 'Peter'
         }
       }
 
@@ -127,7 +128,7 @@ describe Hash do
         id: 1,
         name: {
           first: false,
-          middle: "Peter"
+          middle: 'Peter'
         }
       }
 
@@ -139,14 +140,14 @@ describe Hash do
         id: 1,
         name: {
           addresses: [],
-          middle: "Peter"
+          middle: 'Peter'
         }
       }
 
       expected = {
         id: 1,
         name: {
-          middle: "Peter"
+          middle: 'Peter'
         }
       }
 
@@ -158,14 +159,14 @@ describe Hash do
         id: 1,
         name: {
           children: {},
-          middle: "Peter"
+          middle: 'Peter'
         }
       }
 
       expected = {
         id: 1,
         name: {
-          middle: "Peter"
+          middle: 'Peter'
         }
       }
 

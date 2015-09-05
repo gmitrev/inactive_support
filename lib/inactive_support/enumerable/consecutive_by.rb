@@ -32,6 +32,7 @@ module Enumerable
   end
 
   private
+
   def _ordinal(string)
     string.to_s.gsub(/[a-zA-Z]/) { |c| c.ord }.to_i
   end
