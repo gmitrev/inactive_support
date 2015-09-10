@@ -1,6 +1,6 @@
 # InactiveSupport
 
-A collection of utilities for ruby projects.
+A collection of useful extensions for Ruby projects.
 
 ## Installation
 
@@ -16,10 +16,11 @@ Or install it yourself as:
 
     $ gem install inactive_support
 
-## Usage
+## Extensions
 
-### Object
-#### #identity
+#### Object
+
+##### #identity
 returns self
 
 ```ruby
@@ -27,7 +28,7 @@ returns self
 # => [[1], [2], [3,3], [4], [5,5]]
 ```
 
-#### #try
+##### #try
 send a message to the receiver and if it doesn't respond to the message, return nil
 
 ```ruby
@@ -35,7 +36,7 @@ send a message to the receiver and if it doesn't respond to the message, return 
 # => nil
 ```
 
-#### #ctry
+##### #ctry
 chained try, for methods with no arguments
 
 ```ruby
@@ -43,8 +44,8 @@ chained try, for methods with no arguments
 # => nil
 ```
 
-### Hash
-#### #delete_blank
+#### Hash
+##### #delete_blank
 Deletes all key/value pairs where the value is an empty string/array/hash or nil.
 
 ```ruby
@@ -52,13 +53,37 @@ Deletes all key/value pairs where the value is an empty string/array/hash or nil
 # => { age: 19 }
 ```
 
-### Enumerable
-#### #consecutive_by
-groups objects by an attribute that is consecutive
+##### #deep_delete_blank
+Recursively deletes all key/value pairs where the value is an empty string/array/hash or nil.
+
+```ruby
+{ name: nil, age: 19, address: { street_name: 'Vitosha', street_number: nil },  }.deep_delete_blank
+# => { age: 19, address: { street_name: 'Vitosha' }  }
+```
+
+#### Enumerable
+##### #consecutive_by
+Groups objects by an attribute that is consecutive
 
 ```ruby
 [1,2,3,5,6,8,9].consecutive_by(&:identity)
 # => [[1,2,3],[5,6],[8,9]]
+```
+
+##### #consecutive?
+Returns true if the objects are consecutive
+
+```ruby
+[1, 2, 3, 5, 6, 8, 9].consecutive?
+# =>  false
+```
+
+##### #sorted?
+Returns true if the collection is sorted
+
+```ruby
+[1, 2, 3, 3, 5, 6, 8, 9].sorted?
+# =>  true
 ```
 
 ## Contributing
