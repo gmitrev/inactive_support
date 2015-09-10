@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['gvmitrev@gmail.com']
   spec.description   = 'A collection of utilities and extensions'
   spec.summary       = 'Snippets and useful stuff extracted from my projects'
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/gmitrev/inactive_support'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
