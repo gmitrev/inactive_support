@@ -54,4 +54,44 @@ describe Object do
     end
   end
 
+  describe '#deep_dup' do
+
+    it 'works with hashes' do
+      original = {
+        name: {
+          first: 'Gavin'
+        }
+      }
+
+      duplicate = original.deep_dup
+
+      # modify duplicate
+      expect do
+        duplicate[:name][:first] = 'Dazen'
+      end.not_to change { original[:name][:first] }
+
+    end
+
+    it 'works with arrays' do
+      original = [1, 2, 3]
+      modified = original.deep_dup
+
+      expect do
+        modified.unshift(0)
+      end.not_to change { original }
+
+      expect do
+        modified.push(4)
+      end.not_to change { original }
+    end
+
+    it 'works with strings' do
+      original = "I ain't grouchy, "
+      modified = original.deep_dup
+
+      expect do
+        modified += '“I just have a low threshold for stupidity'
+      end.not_to change { original }
+    end
+  end
 end
