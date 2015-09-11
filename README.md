@@ -20,6 +20,31 @@ Or install it yourself as:
 
 #### Object
 
+##### #blank?
+Returns true if the object is blank:
+
+```ruby
+[].blank?
+# => true
+
+{}.blank?
+# => true
+
+''.blank?
+# => true
+
+'   '.blank?
+# => true
+
+"\n\t".blank?
+# => true
+
+'A man'.blank?
+# => false
+""
+
+```
+
 ##### #identity
 returns self
 
@@ -42,6 +67,33 @@ chained try, for methods with no arguments
 ```ruby
 "Somestring".ctry(:mb_chars, :downcase, :some_method)
 # => nil
+```
+
+##### #deep_dup
+Object#dup has a hidden pitfall:
+
+```ruby
+person = { name: { first: 'Gavin' } }
+dupl = person.dup
+
+#this also changes person when it shouldn't
+dupl[:name][:first] = 'Dazen'
+
+person
+#  => {:name=>{:first=>"Dazen"}}
+```
+
+Object#deep_dup fixes this behavior:
+
+```ruby
+person = { name: { first: 'Gavin' } }
+dupl = person.deep_dup
+
+#this also changes person when it shouldn't
+dupl[:name][:first] = 'Dazen'
+
+person
+#  => {:name=>{:first=>"Gavin"}}
 ```
 
 #### Hash
