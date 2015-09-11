@@ -14,7 +14,6 @@ describe Enumerable do
       simple_people = [mitko, goshko, krasi, dedo]
 
       expect(simple_people.consecutive_by(&:age)).to eq [[mitko, goshko], [krasi], [dedo]]
-      expect(simple_people.consecutive_by(&:age)).to eq [[mitko, goshko], [krasi], [dedo]]
     end
 
     it 'sorts by the given method before partitioning' do
