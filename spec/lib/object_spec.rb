@@ -18,4 +18,40 @@ describe Object do
     end
   end
 
+  describe '#blank' do
+    it 'works with arrays' do
+      expect([].blank?).to be true
+      expect([1].blank?).to be false
+    end
+
+    it 'works with hashes' do
+      expect({}.blank?).to be true
+      expect({ name: 'Kip' }.blank?).to be false
+    end
+
+    it 'works with strings' do
+      blank = [
+        '',
+        ' ',
+        '   ',
+        "\t",
+        "\r",
+        "\n"
+      ]
+
+      not_blank = [
+        ' a ',
+        'string'
+      ]
+
+      blank.each do |string|
+        expect(string.blank?).to be true
+      end
+
+      not_blank.each do |string|
+        expect(string.blank?).to be false
+      end
+    end
+  end
+
 end
