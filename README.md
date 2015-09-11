@@ -1,6 +1,6 @@
 # InactiveSupport
 
-A collection of useful extensions for Ruby projects.
+A collection of useful extensions for the Ruby programming language.
 
 ## Installation
 
@@ -42,22 +42,24 @@ Returns true if the object is blank:
 'A man'.blank?
 # => false
 ""
-
 ```
 
 ##### #identity
 returns self
 
 ```ruby
-[1,2,3,3,4,5,5].group_by(&:identity)
-# => [[1], [2], [3,3], [4], [5,5]]
+[1, 2, 3, 3, 4, 5, 5].group_by(&:identity)
+# => [[1], [2], [3, 3], [4], [5, 5]]
 ```
 
 ##### #try
 send a message to the receiver and if it doesn't respond to the message, return nil
 
 ```ruby
-"".try(:some_method)
+'A string'.some_method
+# => NoMethodError: undefined method `some_method' for "A string":String
+
+'A string'.try(:some_method)
 # => nil
 ```
 
@@ -118,8 +120,8 @@ Recursively deletes all key/value pairs where the value is an empty string/array
 Groups objects by an attribute that is consecutive
 
 ```ruby
-[1,2,3,5,6,8,9].consecutive_by(&:identity)
-# => [[1,2,3],[5,6],[8,9]]
+[1, 2, 3, 5, 6, 8, 9].consecutive_by(&:identity)
+# => [[1, 2, 3], [5, 6], [8, 9]]
 ```
 
 ##### #consecutive?
