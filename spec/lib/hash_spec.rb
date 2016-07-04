@@ -1,6 +1,7 @@
 # encoding: utf-8
 require 'spec_helper'
 require 'inactive_support/hash/delete_blank'
+require 'inactive_support/hash/deep_delete_blank'
 
 describe Hash do
 
